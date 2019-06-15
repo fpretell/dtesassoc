@@ -1,0 +1,21 @@
+<h2>Listado de Empresas</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Rut</th>
+      <th>Razón Social</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @companies.each do |c| %>
+      <tr>
+        <td><a href="dtes/<%= c.rut %>"><%= c.rut %></a></td>
+        <td><%= c.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

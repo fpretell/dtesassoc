@@ -1,0 +1,39 @@
+<h2>Dtes Emitidos - Empresa "<%= @company[:name] %>"</h2>
+<hr>
+<% @invoices.each do |f| %>
+
+<TABLE >
+	<TR>
+    <TH>Fecha</TH>
+		<TD><%= DateTime.strptime(f[:date],'%s').strftime("%d/%m/%Y %H:%M:%S") %></TD>
+  </TR>
+  <TR>
+    <TH>Fecha</TH>
+		<TD><%= f[:date] %></TD>
+  </TR>
+  <TR>
+    <TH>Tipo</TH>
+		<TD><%= f.typed %></TD>
+  </TR>
+  <TR>
+    <TH>Folio</TH>
+		<TD><%= f.folio %></TD>
+  </TR>
+  <TR>
+    <TH>Emisor</TH>
+		<TD><%= f.company.rut %></TD>
+  </TR>
+  <TR>
+    <TH>Receptor</TH>
+		<TD><%= f.receiver_rut %></TD>
+  </TR>
+
+</TABLE>
+<hr>
+<% end %>
+
+<br>
+<br>
+
+
+<a href="/companies">Back</a>
