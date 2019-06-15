@@ -1,24 +1,54 @@
-# README
+# fpretell/dtesassoc
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Descripción
 
-Things you may want to cover:
+Esta es una aplicación que proporciona datos de DTEs emitidos por empresa, usando Asociaciones o Relaciones (belongs_to, has_many)
 
-* Ruby version
 
-* System dependencies
+## Requerimientos
 
-* Configuration
+Este proyecto actualmente trabaja con :
 
-* Database creation
+* Ruby 2.6.3
+* Rails 5.2.3
+* Sqlite3
 
-* Database initialization
 
-* How to run the test suite
+## Instalación
 
-* Services (job queues, cache servers, search engines, etc.)
+  1. Clonar el proyecto
+      ```
+      git clone https://github.com/fpretell/dtesassoc.git
+      ```
+  2. Instalar Gemfile
+      ```
+      bundle install
+      ```
+  3. Crear databases (create y migrate)
+      ```
+      rake db:create
+      rake db:migrate
+      ```
+  4. Insertar datos iniciales en database (seed)
+      ```
+      rake db:seed
+      ```
+  5. Iniciar Server Rails
+      ```
+      rails server
+      ```
+  6. Abrir en navegador:
+      ```
+      http://localhost:3000/companies
+      ```
 
-* Deployment instructions
+## End-points
 
-* ...
+  * ```GET /companies```
+
+    Permite visualizar el listado de Empresas
+
+
+  * ```GET /dtes/:rut```
+
+    Permite visualizar los DTEs de la empresa con rut ":rut" ordenados por fecha descendente.
