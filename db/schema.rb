@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_15_190019) do
+ActiveRecord::Schema.define(version: 2019_06_15_221706) do
 
   create_table "companies", force: :cascade do |t|
     t.string "rut"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 2019_06_15_190019) do
     t.datetime "updated_at", null: false
     t.integer "company_id"
     t.index ["company_id"], name: "index_invoices_on_company_id"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "ammount"
+    t.string "description"
+    t.string "iva"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "invoice_id"
+    t.index ["invoice_id"], name: "index_items_on_invoice_id"
   end
 
 end

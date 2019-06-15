@@ -27,6 +27,33 @@
     <TH>Receptor</TH>
 		<TD><%= f.receiver_rut %></TD>
   </TR>
+	<TR>
+    <TH>Items</TH>
+		<TD>
+
+      <table border>
+         <tr>
+            <td>Monto</td>
+            <td>Descripción</td>
+            <td>Iva</td>
+        </tr>
+        <% sum=0 %>
+        <% f.items.each do |i| %>
+          <tr>
+              <td><%= i["ammount"] %></td>
+              <td><%= i["description"] %></td>
+              <td><%= i["iva"] %></td>
+          </tr>
+					<% sum += i["ammount"].to_i %>
+        <% end %>
+      </table>
+
+    </TD>
+  </TR>
+	<TR>
+    <TH>Total</TH>
+		<TD><%= sum %></TD>
+  </TR>
 
 </TABLE>
 <hr>
@@ -34,6 +61,5 @@
 
 <br>
 <br>
-
 
 <a href="/companies">Back</a>
