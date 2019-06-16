@@ -10,22 +10,18 @@ Un Dte (Invoice) tiene uno o mas Items(invoices).
 
 ```
 class Company < ApplicationRecord
-	has_many :invoices
+  has_many :invoices
 end
-```
-```
-class Invoice < ApplicationRecord
-	belongs_to :company
-	has_many :items
-end
-```
 
-```
+class Invoice < ApplicationRecord
+  belongs_to :company
+  has_many :items
+end
+
 class Item < ApplicationRecord
   belongs_to :invoice
 end
 ```
-
 
 ## Requerimientos
 
