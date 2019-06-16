@@ -22,6 +22,7 @@ Este proyecto actualmente trabaja con :
       ```
   2. Instalar Gemfile
       ```
+      cd dtesassoc
       bundle install
       ```
   3. Crear databases (create y migrate)
