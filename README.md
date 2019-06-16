@@ -4,6 +4,28 @@
 
 Esta es una aplicación que proporciona datos de DTEs emitidos por empresa, usando Asociaciones o Relaciones (belongs_to, has_many)
 
+Notar en los modelos el uso de belongs_to y has_many.
+Una empresa (Company) tiene uno o mas Dtes(invoices).
+Un Dte (Invoice) tiene uno o mas Items(invoices).
+
+```
+class Company < ApplicationRecord
+	has_many :invoices
+end
+```
+```
+class Invoice < ApplicationRecord
+	belongs_to :company
+	has_many :items
+end
+```
+
+```
+class Item < ApplicationRecord
+  belongs_to :invoice
+end
+```
+
 
 ## Requerimientos
 
